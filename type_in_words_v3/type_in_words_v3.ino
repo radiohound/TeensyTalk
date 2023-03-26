@@ -207,22 +207,22 @@ void loop() {
       switch (letter) {
 
          case '0':
-            Serial.print("Z");
+            //Serial.print("Z");
             playWav1.play("Z.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("IY");
+            //Serial.print("IY");
             playWav1.play("IY.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("R");
+            //Serial.print("R");
             playWav1.play("R.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             }   
-            Serial.print("OW");
+            //Serial.print("OW");
             playWav1.play("OW.wav");
             while (playWav1.isPlaying()){
               delay(1);  
@@ -230,17 +230,17 @@ void loop() {
         break;       
 
         case '1':
-            Serial.print("W");
+            //Serial.print("W");
             playWav1.play("W.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("AH");
+            //Serial.print("AH");
             playWav1.play("AH.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("N");
+            //Serial.print("N");
             playWav1.play("N.wav");
             while (playWav1.isPlaying()){
               delay(1);  
@@ -248,12 +248,12 @@ void loop() {
         break;
 
         case '2':
-            Serial.print("T");
+            //Serial.print("T");
             playWav1.play("T.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("UW");
+            //Serial.print("UW");
             playWav1.play("UW.wav");
             while (playWav1.isPlaying()){
               delay(1);  
@@ -261,17 +261,17 @@ void loop() {
         break;
         
         case '3':
-            Serial.print("TH");
+            //Serial.print("TH");
             playWav1.play("TH.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("R");
+            //Serial.print("R");
             playWav1.play("R.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("IY");
+            //Serial.print("IY");
             playWav1.play("IY.wav");
             while (playWav1.isPlaying()){
               delay(1);  
@@ -279,17 +279,17 @@ void loop() {
         break;
 
         case '4':
-            Serial.print("F");
+            //Serial.print("F");
             playWav1.play("F.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("OH");
+            //Serial.print("OH");
             playWav1.play("OH.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("R");
+            //Serial.print("R");
             playWav1.play("R.wav");
             while (playWav1.isPlaying()){
               delay(1);  
@@ -297,17 +297,17 @@ void loop() {
         break;
 
         case '5':
-            Serial.print("F");
+            //Serial.print("F");
             playWav1.play("F.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("AY");
+            //Serial.print("AY");
             playWav1.play("AY.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("V");
+            //Serial.print("V");
             playWav1.play("V.wav");
             while (playWav1.isPlaying()){
               delay(1);  
@@ -315,22 +315,22 @@ void loop() {
         break;
 
         case '6':
-            Serial.print("S");
+            //Serial.print("S");
             playWav1.play("S.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("IH");
+            //Serial.print("IH");
             playWav1.play("IH.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("K");
+            //Serial.print("K");
             playWav1.play("K.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             }        
-            Serial.print("S");
+            //Serial.print("S");
             playWav1.play("S.wav");
             while (playWav1.isPlaying()){
               delay(1);  
@@ -338,27 +338,27 @@ void loop() {
         break;
 
         case '7':
-            Serial.print("S");
+            //Serial.print("S");
             playWav1.play("S.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("EH");
+            //Serial.print("EH");
             playWav1.play("EH.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("V");
+            //Serial.print("V");
             playWav1.play("V.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             }       
-            Serial.print("EH");
+            //Serial.print("EH");
             playWav1.play("EH.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("N");
+            //Serial.print("N");
             playWav1.play("N.wav");
             while (playWav1.isPlaying()){
               delay(1);  
@@ -366,12 +366,12 @@ void loop() {
         break;
         
         case '8':
-            Serial.print("EY");
+            //Serial.print("EY");
             playWav1.play("EY.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("T");
+            //Serial.print("T");
             playWav1.play("T.wav");
             while (playWav1.isPlaying()){
               delay(1);  
@@ -379,17 +379,17 @@ void loop() {
         break;
 
         case '9':
-            Serial.print("N");
+            //Serial.print("N");
             playWav1.play("N.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("AY");
+            //Serial.print("AY");
             playWav1.play("AY.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("N");
+            //Serial.print("N");
             playWav1.play("N.wav");
             while (playWav1.isPlaying()){
               delay(1);  
@@ -399,30 +399,30 @@ void loop() {
         case 'a':
           if (txtMsg.charAt(i+1)=='u')  {  //baud, laud, maud
               i++; 
-              Serial.print("AA");
+              //Serial.print("AA");
               playWav1.play("AA.wav");
             
           } else if (vowels.indexOf(txtMsg.charAt(i+1)) != -1) { //if next letter is a vowel, do long vowel sound and skip sound of next vowel
             i++; //skip i sound, because it is included in phoneme below
-            Serial.print("EY");
+            //Serial.print("EY");
             playWav1.play("EY.wav");
           } else if ((txtMsg.charAt(i+1)=='n') && (txtMsg.charAt(i+2)=='y')) { 
-              Serial.print("EH");
+              //Serial.print("EH");
               playWav1.play("EH.wav");
           } else if ((vowels.indexOf(txtMsg.charAt(i+1)) == -1) && (vowels.indexOf(txtMsg.charAt(i+2)) != -1))  { // if there is a consonant, then a vowel
-              Serial.print("EY");
+              //Serial.print("EY");
               playWav1.play("EY.wav");
           } else if ((txtMsg.charAt(i+1)=='c') && ((txtMsg.charAt(i+2)=='h') || (txtMsg.charAt(i+3)=='e'))) {
-              Serial.print("EY");
+              //Serial.print("EY");
               playWav1.play("EY.wav"); 
           } else if ((txtMsg.charAt(i-1)=='g') && (txtMsg.charAt(i+1)=='l')) {
-              Serial.print("AX");
+              //Serial.print("AX");
               playWav1.play("AX.wav");
           } else if (txtMsg.charAt(i+1)=='l') { 
-              Serial.print("AO");
+              //Serial.print("AO");
               playWav1.play("AO.wav");
           } else {
-              Serial.print("AE"); 
+              //Serial.print("AE"); 
               playWav1.play("AE.wav");
           }
           while (playWav1.isPlaying()){
@@ -434,7 +434,7 @@ void loop() {
           if (txtMsg.charAt(i+1)=='b') {
             //skip
           } else {
-              Serial.print("B");
+              //Serial.print("B");
               playWav1.play("B.wav");
           }
           while (playWav1.isPlaying()){
@@ -445,34 +445,34 @@ void loop() {
         case 'c':
           if ((txtMsg.charAt(i+1)=='i') && (txtMsg.charAt(i+2)=='a') && (txtMsg.charAt(i+3)=='l'))  {
               i=i+2;
-              Serial.print("SH");
+              //Serial.print("SH");
               playWav1.play("SH.wav");
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("UL");
+              //Serial.print("UL");
               playWav1.play("UL.wav"); 
           } else if ((txtMsg.charAt(i+1)=='i') && ((txtMsg.charAt(i+2)=='e') || (txtMsg.charAt(i+2)=='a'))) { 
-              Serial.print("SH");
+              //Serial.print("SH");
               playWav1.play("SH.wav");   
           } else if ((txtMsg.charAt(i-1)=='a') && ((txtMsg.charAt(i+1)=='h') && (txtMsg.charAt(i+2)=='e'))) { //ache
               i++;
-              Serial.print("K");
+              //Serial.print("K");
               playWav1.play("K.wav");      
           } else if (txtMsg.charAt(i-1)=='x') {  
               delay(1);
           } else if ((txtMsg.charAt(i+1)=='e') || (txtMsg.charAt(i+1)=='i')) {  
-            Serial.print("S");
+            //Serial.print("S");
             playWav1.play("S.wav");
           } else if (txtMsg.charAt(i+1)=='h') {  
               i++;
-              Serial.print("CH");
+              //Serial.print("CH");
               playWav1.play("CH.wav");      
           } else if (txtMsg.charAt(i+1)=='y') {  
-              Serial.print("S");
+              //Serial.print("S");
               playWav1.play("S.wav");                        
           } else {  
-              Serial.print("K"); 
+              //Serial.print("K"); 
               playWav1.play("K.wav"); 
           }
           while (playWav1.isPlaying()){
@@ -484,7 +484,7 @@ void loop() {
           if (txtMsg.charAt(i+1)=='d') { 
             //skip first sound
           } else {         
-              Serial.print("D");
+              //Serial.print("D");
               playWav1.play("D.wav");
           }
           while (playWav1.isPlaying()){
@@ -495,173 +495,173 @@ void loop() {
         case 'e':
           if ((txtMsg.charAt(i+1)=='o') && (txtMsg.charAt(i+2)=='u')) { 
             i=i+2; //skip sound, because it is included in phoneme below
-            Serial.print("IY(e1)");
+            //Serial.print("IY(e1)");
             playWav1.play("IY.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-              Serial.print("AX(e1)");
+              //Serial.print("AX(e1)");
               playWav1.play("AX.wav");
           } else if ((txtMsg.charAt(i-3)=='t') && (txtMsg.charAt(i-2)=='e') && (txtMsg.charAt(i-1)=='l')) { //'tele'phone (takes care of second e)
-              Serial.print("EH(e2)");
+              //Serial.print("EH(e2)");
               playWav1.play("EH.wav");  
           } else if ((txtMsg.charAt(i-1)=='t') && (txtMsg.charAt(i+1)=='l') && (txtMsg.charAt(i+2)=='e')) { //'tele'phone (takes care of first e)
-              Serial.print("EH(e3)");
+              //Serial.print("EH(e3)");
               playWav1.play("EH.wav");   
           } else if ((txtMsg.charAt(i-2)=='c') && (txtMsg.charAt(i-1)=='r')  && (txtMsg.charAt(i+1)=='a') && (txtMsg.charAt(i+2)=='t') && (txtMsg.charAt(i+3)=='e')) {
               i++; //create 
-              Serial.print("IY(e5)");
+              //Serial.print("IY(e5)");
               playWav1.play("IY.wav");  
               while (playWav1.isPlaying()){
                 delay(1); 
               }
               delay(30); //add delay between syllables 
-              Serial.print("EY(e5)");
+              //Serial.print("EY(e5)");
               playWav1.play("EY.wav");   
           } else if ((txtMsg.charAt(i-1)=='r') && (txtMsg.charAt(i+1)=='a') && (txtMsg.charAt(i+2)=='c') && (txtMsg.charAt(i+3)=='t')) {
               i++;
-              Serial.print("IY(e6)");
+              //Serial.print("IY(e6)");
               playWav1.play("IY.wav");
               while (playWav1.isPlaying()){
                 delay(1); 
               }
-              Serial.print("AE(e6)");
+              //Serial.print("AE(e6)");
               playWav1.play("AE.wav");
           } else if (((txtMsg.charAt(i-1)=='l') || (txtMsg.charAt(i-1)=='n')) && ((txtMsg.charAt(i+1)=='s') && (txtMsg.charAt(i+2)=='s'))) {    
-              Serial.print("EH(e7)");
+              //Serial.print("EH(e7)");
               playWav1.play("EH.wav");
           } else if (((txtMsg.charAt(i-2)=='o') && (txtMsg.charAt(i-1)=='v')) && ((txtMsg.charAt(i+1)=='n') || (txtMsg.charAt(i+1)=='r'))) {    
-              Serial.print("EH(e8)");
+              //Serial.print("EH(e8)");
               playWav1.play("EH.wav");  
           } else if (((txtMsg.charAt(i-2)=='n') && ((txtMsg.charAt(i-1)=='d') || (txtMsg.charAt(i-1)=='t')))) {    
-              Serial.print("EH(e8b)");
+              //Serial.print("EH(e8b)");
               playWav1.play("EH.wav");      
           } else if ((txtMsg.charAt(i-2) == 'd') && (txtMsg.charAt(i-1) == 'r'))  { //exception for hun'dred'
-              Serial.print("EH(e8d)");
+              //Serial.print("EH(e8d)");
               playWav1.play("EH.wav");    
           } else if ((vowels.indexOf(txtMsg.charAt(i-2)) == -1) && (vowels.indexOf(txtMsg.charAt(i-1)) == -1) &&  (txtMsg.charAt(i+1)=='d') && (txtMsg.length() - 4)==i)  {
               //silent E when used with words like missed, rushed, tipped linked stuffed - makes T sound
               i++;
-              Serial.print("T(e8c)");
+              //Serial.print("T(e8c)");
               playWav1.play("T.wav");
           } else if ((vowels.indexOf(txtMsg.charAt(i-2)) == -1) && (txtMsg.charAt(i-1)=='v') && (txtMsg.charAt(i+1)=='s') && (txtMsg.length() - 4)==i)  {
               // silent E for calves drarves starves
           } else if ((vowels.indexOf(txtMsg.charAt(i-2)) != -1) && ((txtMsg.charAt(i-1)=='s') || (txtMsg.charAt(i-1)=='c') || (txtMsg.charAt(i-1)=='v') || (txtMsg.charAt(i-1)=='z') || (txtMsg.charAt(i-1)=='k')) && (txtMsg.charAt(i+1)=='d') && (txtMsg.length() - 4)==i)  {
               //silent E when used with words like laced spaced, lazed, graced praised 
-              Serial.print("-(e9a)");      
+              //Serial.print("-(e9a)");      
           } else if ((vowels.indexOf(txtMsg.charAt(i-2)) != -1) && ((txtMsg.charAt(i-1)!='s') && (txtMsg.charAt(i-1)!='c') && (txtMsg.charAt(i-1)!='z')) && (txtMsg.charAt(i+1)=='s') && (txtMsg.length() - 4)==i)  { // vowel, then e then s with e silent if not after s,c or z
-              Serial.print("-(e9)"); 
+              //Serial.print("-(e9)"); 
           } else if ((txtMsg.length() - 3 == i) && (txtMsg.length() < 6) && ((txtMsg.charAt(i-1)=='h') || (txtMsg.charAt(i-1)=='b') || (txtMsg.charAt(i-1)=='m'))) {  //he or be she
-              Serial.print("IY(e10)");
+              //Serial.print("IY(e10)");
               playWav1.play("IY.wav");
           } else if ((txtMsg.charAt(i-1)=='h') && (txtMsg.charAt(i+1)=='i') && (txtMsg.charAt(i+2)=='g') && (txtMsg.charAt(i+3)=='h')) { 
               i=i+3; 
-              Serial.print("AY(e15)");
+              //Serial.print("AY(e15)");
               playWav1.play("AY.wav");    
           } else if ((txtMsg.charAt(i-1)=='c') && (txtMsg.charAt(i+1)=='i')) { //receipt
               i++;
-              Serial.print("IY(e11)");
+              //Serial.print("IY(e11)");
               playWav1.play("IY.wav");  
           } else if ((txtMsg.length() == 5) && (txtMsg.length() -3 == i) && (txtMsg.charAt(i-2)=='t') && (txtMsg.charAt(i-1)=='h')) {
-                Serial.print("UH(e12)");
+                //Serial.print("UH(e12)");
                 playWav1.play("UH.wav"); 
           } else if ((txtMsg.charAt(i+1)=='t') && (txtMsg.charAt(i-1)=='i') && (txtMsg.charAt(i+2)=='y')) { 
               i=i+2; //skip sound, because it is included in phoneme below
-              Serial.print("IX(e13)");
+              //Serial.print("IX(e13)");
               playWav1.play("IX.wav");
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("T(e13)");
+              //Serial.print("T(e13)");
               playWav1.play("T.wav");
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("IY(e13)");
+              //Serial.print("IY(e13)");
               playWav1.play("IY.wav");
           } else if ((txtMsg.charAt(i+1)=='t') && (txtMsg.charAt(i+2)=='y')) { 
               i=i+2; 
-              Serial.print("T(e14)");
+              //Serial.print("T(e14)");
               playWav1.play("T.wav");
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("IY(e14)");
+              //Serial.print("IY(e14)");
               playWav1.play("IY.wav");
           } else if ((txtMsg.charAt(i+1)=='a') && ((txtMsg.charAt(i+2)==' ') || (txtMsg.charAt(i+2)=='\r') || (txtMsg.charAt(i+2)=='s'))) { 
               i++; 
-              Serial.print("IY(e15)");
+              //Serial.print("IY(e15)");
               playWav1.play("IY.wav");
           } else if ((txtMsg.charAt(i+1)=='c') && (txtMsg.charAt(i+2)=='i')) { 
-              Serial.print("EH(e16)");
+              //Serial.print("EH(e16)");
               playWav1.play("EH.wav");
           } else if (txtMsg.charAt(i+1)=='o') { 
               i++; 
-              Serial.print("IY(e16)");
+              //Serial.print("IY(e16)");
               playWav1.play("IY.wav");
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("OW(e16)");
+              //Serial.print("OW(e16)");
               playWav1.play("OW.wav");
           } else if (txtMsg.charAt(i+1)=='w') { 
               i++; 
-              Serial.print("UW(e16)");
+              //Serial.print("UW(e16)");
               playWav1.play("UW.wav") ;
           } else if (vowels.indexOf(txtMsg.charAt(i+2)) != -1) {
-              Serial.print("IY(e17)");
+              //Serial.print("IY(e17)");
               playWav1.play("IY.wav");
           } else if ((txtMsg.charAt(i-1)=='h') && (txtMsg.charAt(i+1)=='a')  && (txtMsg.charAt(i+2)=='d')) {
               i++;
-              Serial.print("EH(e17)");
+              //Serial.print("EH(e17)");
               playWav1.play("EH.wav"); 
           } else if (((txtMsg.charAt(i-2)=='d') || (txtMsg.charAt(i-2)=='t') || (txtMsg.charAt(i-2)=='p') || (txtMsg.charAt(i-2)=='b')) && (txtMsg.charAt(i-1)=='r') && (txtMsg.charAt(i+1)=='a')  && (txtMsg.charAt(i+2)=='d')) {
               i++; // bread, spread, dread, tread
-              Serial.print("EH(e18)");
+              //Serial.print("EH(e18)");
               playWav1.play("EH.wav");  
           } else if (((txtMsg.charAt(i-1)=='b') || (txtMsg.charAt(i-1)=='t') || (txtMsg.charAt(i-1)=='w')) && (txtMsg.charAt(i+1)=='a')  && (txtMsg.charAt(i+2)=='r')) {
               i++; //bear tear wear
-              Serial.print("EY(e19)");
+              //Serial.print("EY(e19)");
               playWav1.play("EY.wav");  
           } else if ((txtMsg.charAt(i-2)=='s') && (txtMsg.charAt(i-1)=='t') && (txtMsg.charAt(i+1)=='a') && (txtMsg.charAt(i+2)=='k')) {
               i++; //steak
-              Serial.print("EY(e20)");
+              //Serial.print("EY(e20)");
               playWav1.play("EY.wav"); 
           } else if ((txtMsg.charAt(i-2)=='b') && (txtMsg.charAt(i-1)=='r') && (txtMsg.charAt(i+1)=='a') && (txtMsg.charAt(i+2)=='k')) {
               i++; //break
-              Serial.print("EY(e21)");
+              //Serial.print("EY(e21)");
               playWav1.play("EY.wav"); 
           } else if ((txtMsg.charAt(i+1)=='e') || (txtMsg.charAt(i+1)=='a')) {  // if ea or ee this is default ea sound. Make sure exceptions are above
               i++;
-              Serial.print("IY(e22)");
+              //Serial.print("IY(e22)");
               playWav1.play("IY.wav");              
           } else if (txtMsg.charAt(i+1)=='y') { 
               i++;
-              Serial.print("EY(e23)");
+              //Serial.print("EY(e23)");
               playWav1.play("EY.wav");  
           } else if (vowels.indexOf(txtMsg.charAt(i+1)) != -1) {
               i++;
-              Serial.print("EH(e24)");
+              //Serial.print("EH(e24)");
               playWav1.play("EH.wav");   
           } else if (txtMsg.charAt(i+1)=='r') { 
-              Serial.print("E(e25)");
+              //Serial.print("E(e25)");
               playWav1.play("E.wav");
           } else if ((txtMsg.length() == 5) && (txtMsg.length() -3 == i) && (txtMsg.charAt(i-2)=='t') && (txtMsg.charAt(i-1)=='h')) {
-              Serial.print("UH(e26)");
+              //Serial.print("UH(e26)");
               playWav1.play("UH.wav");
           } else if (txtMsg.charAt(i+1)=='w') { 
               i++; 
-              Serial.print("UW(e27)");
+              //Serial.print("UW(e27)");
               playWav1.play("UW.wav");
           } else if (txtMsg.charAt(i+1)=='\r') { 
-              Serial.print(" (e28)");
+              //Serial.print(" (e28)");
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
           } else if (txtMsg.charAt(i+1)==' ') { 
-              Serial.print(" (e29)");
+              //Serial.print(" (e29)");
           } else { 
-              Serial.print("EH(e30)");
+              //Serial.print("EH(e30)");
               playWav1.play("EH.wav");
           }
           while (playWav1.isPlaying()){
@@ -673,7 +673,7 @@ void loop() {
           if (txtMsg.charAt(i+1)=='f') { 
             //skip first sound
           } else { 
-              Serial.print("F");
+              //Serial.print("F");
               playWav1.play("F.wav");
           }
           while (playWav1.isPlaying()){
@@ -684,28 +684,28 @@ void loop() {
         case 'g':
           if (txtMsg.charAt(i+1)=='g')  {
             i++; //skip letter
-            Serial.print("G"); 
+            //Serial.print("G"); 
             playWav1.play("G.wav");
           } else if ((txtMsg.charAt(i+1)=='h') && (txtMsg.charAt(i+1)=='t'))  { 
               i+2; //skip sound for gh
           } else if ((i==0) && (txtMsg.charAt(i+1)=='n')) {  // gnome dont make a sound
           } else if ((txtMsg.charAt(i+1)=='e') && (txtMsg.charAt(i+2)=='t')) {
-              Serial.print("G"); 
+              //Serial.print("G"); 
               playWav1.play("G.wav");
           } else if ((txtMsg.charAt(i+1)=='e') && (txtMsg.charAt(i+2)=='l')){ 
-            Serial.print("J");
+            //Serial.print("J");
             playWav1.play("J.wav");
           } else if (txtMsg.charAt(i+1)=='y') { 
               i++; //
-              Serial.print("J");
+              //Serial.print("J");
               playWav1.play("J.wav");
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("IY");
+              //Serial.print("IY");
               playWav1.play("IY.wav"); 
           } else { 
-              Serial.print("G"); 
+              //Serial.print("G"); 
               playWav1.play("G.wav");
           }
           while (playWav1.isPlaying()){
@@ -714,7 +714,7 @@ void loop() {
         break;
         
         case 'h':
-          Serial.print("_H");
+          //Serial.print("_H");
           playWav1.play("_H.wav");
           while (playWav1.isPlaying()){
             delay(1);  
@@ -722,7 +722,7 @@ void loop() {
         break;   
 
         case 'I':
-          Serial.print("AY");
+          //Serial.print("AY");
           playWav1.play("AY.wav");
           while (playWav1.isPlaying()){
             delay(1);  
@@ -731,59 +731,59 @@ void loop() {
 
         case 'i':
           if ((txtMsg.charAt(i+1)=='e') && (txtMsg.charAt(i+2)=='n') && (txtMsg.charAt(i+3)=='t'))  {  //efficient
-              Serial.print("IY");
+              //Serial.print("IY");
               playWav1.play("IY.wav");    
             
           } else if ((txtMsg.charAt(i-1)=='t') && (txtMsg.charAt(i+1)=='v') && (txtMsg.charAt(i+2)=='e'))  { //tive exception
-              Serial.print("IX");
+              //Serial.print("IX");
               playWav1.play("IX.wav");        
           } else if ((txtMsg.charAt(i-1)=='n') && (txtMsg.charAt(i+1)=='o') && (txtMsg.charAt(i+2)=='n'))  { //onion exception
-              Serial.print("Y");
+              //Serial.print("Y");
               playWav1.play("Y.wav");  
           } else if (((txtMsg.charAt(i-1)=='k')|| (txtMsg.charAt(i-1)=='l') || (txtMsg.charAt(i-1)=='p') || (txtMsg.charAt(i-1)=='t')) && (txtMsg.charAt(i+1)=='e'))  { //lies,ties,skies,pies
               i++;
-              Serial.print("AY");
+              //Serial.print("AY");
               playWav1.play("AY.wav");          
           } else if ((i > 1) && (txtMsg.charAt(i+1) =='o'))  { //radio
               i++;
-              Serial.print("IY");
+              //Serial.print("IY");
               playWav1.play("IY.wav"); 
               while (playWav1.isPlaying()){
                 delay(1);  
               }
-              Serial.print("OH");
+              //Serial.print("OH");
               playWav1.play("OH.wav");              
           } else if ((vowels.indexOf(txtMsg.charAt(i+1)) == -1) && (vowels.indexOf(txtMsg.charAt(i+2)) != -1))  { // if there is a consonant, then a vowel
-              Serial.print("AY");
+              //Serial.print("AY");
               playWav1.play("AY.wav");
           } else if (((txtMsg.charAt(i-2)=='c') || (txtMsg.charAt(i-2)=='t') || (txtMsg.charAt(i-2)=='f')) && ((txtMsg.charAt(i-1)=='r') && (txtMsg.charAt(i+1)=='e')))  { //trie,crie,frie
               i++;
-              Serial.print("AY");
+              //Serial.print("AY");
               playWav1.play("AY.wav");      
           } else if ((txtMsg.charAt(i+1)=='e') && (txtMsg.charAt(i+2)=='c'))  { // iec
               i++;              
-              Serial.print("IY");
+              //Serial.print("IY");
               playWav1.play("IY.wav");
           } else if ((txtMsg.charAt(i+1)=='e') && (txtMsg.charAt(i+2)=='f')) { //grief
               i++;
-              Serial.print("IY");
+              //Serial.print("IY");
               playWav1.play("IY.wav");  
           } else if ((txtMsg.charAt(i+1)=='e') && (txtMsg.charAt(i+2)=='w')) {  //view
-              Serial.print("Y");
+              //Serial.print("Y");
               playWav1.play("Y.wav");      
           } else if (vowels.indexOf(txtMsg.charAt(i+1)) != -1) {  // vowel after 
-              Serial.print("AY");
+              //Serial.print("AY");
               playWav1.play("AY.wav"); 
           } else if (txtMsg.charAt(i+1)=='r') { 
               i++; 
-              Serial.print("ER");
+              //Serial.print("ER");
               playWav1.play("ER.wav");
           } else if ((txtMsg.charAt(i+1)=='g') && (txtMsg.charAt(i+2)=='h')) { 
               i=i+2;
-              Serial.print("AY");
+              //Serial.print("AY");
               playWav1.play("AY.wav");     
           } else { 
-              Serial.print("IH");
+              //Serial.print("IH");
               playWav1.play("IH.wav");
           }
           while (playWav1.isPlaying()){
@@ -792,7 +792,7 @@ void loop() {
         break;
 
         case 'j':
-          Serial.print("J");
+          //Serial.print("J");
           playWav1.play("J.wav");
           while (playWav1.isPlaying()){
             delay(1);  
@@ -805,7 +805,7 @@ void loop() {
           } else if (txtMsg.charAt(i-1)=='c') {
             //skip playing a k sound  
           } else {
-            Serial.print("K");
+            //Serial.print("K");
             playWav1.play("K.wav");
           }
           while (playWav1.isPlaying()){
@@ -817,7 +817,7 @@ void loop() {
           if (txtMsg.charAt(i-1)=='l') {
             //skip playing a l sound   
           } else {
-          Serial.print("L");
+          //Serial.print("L");
           playWav1.play("L.wav");
           }
           while (playWav1.isPlaying()){
@@ -829,7 +829,7 @@ void loop() {
           if (txtMsg.charAt(i+1)=='m')  {
             i++; //next m
           } else   {
-              Serial.print("M");
+              //Serial.print("M");
               playWav1.play("M.wav");
           }
           while (playWav1.isPlaying()){
@@ -840,21 +840,21 @@ void loop() {
         case 'n':
           if ((txtMsg.charAt(i+1)=='g') && ((txtMsg.charAt(i+2)=='e') || (txtMsg.charAt(i+2)=='i')) && (txtMsg.charAt(i-1)!='i'))  { 
             i++; //skip sound, because it is included in phoneme below
-            Serial.print("N");
+            //Serial.print("N");
             playWav1.play("N.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             } 
-            Serial.print("J");
+            //Serial.print("J");
             playWav1.play("J.wav");
           } else if (txtMsg.charAt(i+1)=='n') { 
             //skip first sound
           } else if (txtMsg.charAt(i+1)=='g') { 
             i++; 
-            Serial.print("NX");
+            //Serial.print("NX");
             playWav1.play("NX.wav"); 
           } else { 
-            Serial.print("N");
+            //Serial.print("N");
             playWav1.play("N.wav");
           }
           while (playWav1.isPlaying()){
@@ -865,97 +865,97 @@ void loop() {
         case 'o':
           if ((txtMsg.charAt(i-1)=='y') && (txtMsg.charAt(i+1)=='u'))  { //
               i++; 
-              Serial.print("UW"); 
+              //Serial.print("UW"); 
               playWav1.play("UW.wav"); 
           } else if ((txtMsg.charAt(i-1)=='v') && (txtMsg.charAt(i+1)=='i'))  { //
               i++;
-              Serial.print("OY"); 
+              //Serial.print("OY"); 
               playWav1.play("OY.wav");  
           } else if ((txtMsg.length() == 4) && (txtMsg.charAt(i-1)=='g'))  { //
-              Serial.print("OH"); 
+              //Serial.print("OH"); 
               playWav1.play("OH.wav");
           } else if (txtMsg.charAt(i+1)=='w')   { //
               i++; 
-              Serial.print("OW"); 
+              //Serial.print("OW"); 
               playWav1.play("OW.wav");
           } else if ((txtMsg.charAt(i-2)=='s') && (txtMsg.charAt(i-1)=='h') && (txtMsg.charAt(i+1)=='e'))  { //tive exception
               i++;
-              Serial.print("UW");
+              //Serial.print("UW");
               playWav1.play("UW.wav"); 
           } else if ((txtMsg.charAt(i-1)=='d') && (txtMsg.charAt(i+1)=='o') && (txtMsg.charAt(i+2)=='r'))  { //tive exception
               i++;
-              Serial.print("OH");
+              //Serial.print("OH");
               playWav1.play("OH.wav");  
           } else if ((txtMsg.charAt(i-2)=='n') && (txtMsg.charAt(i-1)=='i') && (txtMsg.charAt(i+1)=='n'))  { //tive exception
               i++;
-              Serial.print("UN");
+              //Serial.print("UN");
               playWav1.play("UN.wav");     
           } else if ((txtMsg.length() == 4) && (txtMsg.length() -3 == i))  {  //o is the last letter of a two letter word
-              Serial.print("UW"); 
+              //Serial.print("UW"); 
               playWav1.play("UW.wav"); 
           } else if ((txtMsg.charAt(i+1)=='u') && ((txtMsg.charAt(i+2)=='g') && (txtMsg.charAt(i+3)=='h'))) { 
               i=i+3;
-              Serial.print("AA");
+              //Serial.print("AA");
               playWav1.play("AA.wav");    
           } else if (txtMsg.charAt(i+1)=='w') {
               i++;
-              Serial.print("AW");
+              //Serial.print("AW");
               playWav1.play("AW.wav");          
           } else if ((vowels.indexOf(txtMsg.charAt(i+1)) == -1) && (vowels.indexOf(txtMsg.charAt(i+2)) != -1))  { // if there is a consonant, then a vowel
-              Serial.print("OW");
+              //Serial.print("OW");
               playWav1.play("OW.wav");
           } else if (txtMsg.charAt(i+1)=='u') { 
             i++; 
-            Serial.print("OW");
+            //Serial.print("OW");
             playWav1.play("OW.wav");
           } else if ((txtMsg.charAt(i-1)=='l') && (txtMsg.charAt(i+1)=='w')){ 
               i++; 
-              Serial.print("OW");
+              //Serial.print("OW");
               playWav1.play("OW.wav");
           } else if ((txtMsg.charAt(i-1)=='m') && (txtMsg.charAt(i+1)=='w')){ 
               i++; 
-              Serial.print("OW");
+              //Serial.print("OW");
               playWav1.play("OW.wav");
           } else if ((txtMsg.charAt(i-1)=='h') && (txtMsg.charAt(i+1)=='w')){ 
               i++; 
-              Serial.print("AW"); 
+              //Serial.print("AW"); 
               playWav1.play("AW.wav");
           } else if ((txtMsg.charAt(i-1)=='w') && ((txtMsg.charAt(i+1)==' ') || (txtMsg.charAt(i+1)=='\r'))) { 
-              Serial.print("UW"); 
+              //Serial.print("UW"); 
               playWav1.play("UW.wav");   
           } else if (txtMsg.charAt(i+1)=='y'){ 
               i++;
-              Serial.print("OY");
+              //Serial.print("OY");
               playWav1.play("OY.wav");
           } else if ((txtMsg.charAt(i-1)=='g') && ((txtMsg.charAt(i+1)==' ') || (txtMsg.charAt(i+1)=='\r'))) { 
-              Serial.print("OH");
+              //Serial.print("OH");
               playWav1.play("OH.wav");
           } else if ((txtMsg.charAt(i-1)=='t') && ((txtMsg.charAt(i+1)==' ') || (txtMsg.charAt(i+1)=='\r'))) { 
-              Serial.print("UX");
+              //Serial.print("UX");
               playWav1.play("UX.wav");
           } else if ((txtMsg.charAt(i+1)=='o') && (txtMsg.charAt(i+2)=='k')){ 
               i++; 
-              Serial.print("UH");
+              //Serial.print("UH");
               playWav1.play("UH.wav");
           } else if (txtMsg.charAt(i+1)=='o') { 
               i++; 
-              Serial.print("UX");
+              //Serial.print("UX");
               playWav1.play("UX.wav");
           } else if ((txtMsg.charAt(i+1)=='n') && (txtMsg.charAt(i+2)!='e')){ 
-              Serial.print("AA");
+              //Serial.print("AA");
               playWav1.play("AA.wav");
           } else if (txtMsg.charAt(i+1)=='m') { 
-              Serial.print("AH"); 
+              //Serial.print("AH"); 
               playWav1.play("AH.wav");
           } else if ((txtMsg.charAt(i+1)==' ') || (txtMsg.charAt(i+1)=='\r'))  { 
-              Serial.print("OW");
+              //Serial.print("OW");
               playWav1.play("OW.wav");
           } else if (txtMsg.charAt(i+1)=='a') {
               i++; 
-              Serial.print("OH");
+              //Serial.print("OH");
               playWav1.play("OH.wav");
           } else {
-              Serial.print("AA"); 
+              //Serial.print("AA"); 
               playWav1.play("AA.wav"); 
           }
           while (playWav1.isPlaying()){
@@ -966,12 +966,12 @@ void loop() {
         case 'p':
           if (txtMsg.charAt(i+1)=='h') { 
               i++; 
-              Serial.print("F");
+              //Serial.print("F");
               playWav1.play("F.wav");
           } else if (txtMsg.charAt(i+1)=='p') { 
             //skip first sound 
           } else {
-              Serial.print("P");              
+              //Serial.print("P");              
               playWav1.play("P.wav");
           }
           while (playWav1.isPlaying()){
@@ -982,20 +982,20 @@ void loop() {
         case 'q':
           if ((txtMsg.charAt(i+1)=='u') && (txtMsg.charAt(i+2)=='e') && (txtMsg.charAt(i+3)=='a'))  {
             i=i+3;
-            Serial.print("K");
+            //Serial.print("K");
             playWav1.play("K.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             }  
-            Serial.print("W");
+            //Serial.print("W");
             playWav1.play("W.wav");
             while (playWav1.isPlaying()){
               delay(1);  
             }             
-            Serial.print("IY");
+            //Serial.print("IY");
             playWav1.play("IY.wav");
           }else {
-            Serial.print("K");
+            //Serial.print("K");
             playWav1.play("K.wav");
           }
           while (playWav1.isPlaying()){
@@ -1007,7 +1007,7 @@ void loop() {
           if (txtMsg.charAt(i+1)=='r') { 
             //skip first r sound
           } else {   
-              Serial.print("R");
+              //Serial.print("R");
               playWav1.play("R.wav");
           }
           while (playWav1.isPlaying()){
@@ -1018,18 +1018,18 @@ void loop() {
         case 's':
           if (txtMsg.charAt(i+1)=='h') { 
             i++; 
-            Serial.print("SH");
+            //Serial.print("SH");
             playWav1.play("SH.wav");
           } else if ((i > 0) && (vowels.indexOf(txtMsg.charAt(i-1)) != -1) && (vowels.indexOf(txtMsg.charAt(i+1)) != -1))  {  //between two vowels
-            Serial.print("Z");
+            //Serial.print("Z");
             playWav1.play("Z.wav");
           } else if (txtMsg.charAt(i+1)=='s') { 
             //skip first sound
           } else if ((i > 0) && (sisz.indexOf(txtMsg.charAt(i-1)) != -1))  { // if prior letter is in s is z sounds
-              Serial.print("Z");
+              //Serial.print("Z");
               playWav1.play("Z.wav");
           } else {
-              Serial.print("S");
+              //Serial.print("S");
               playWav1.play("S.wav");
           }
           while (playWav1.isPlaying()){
@@ -1040,43 +1040,43 @@ void loop() {
         case 't':
           if ((txtMsg.charAt(i+1)=='i') && (txtMsg.charAt(i+2)=='o') && (txtMsg.charAt(i+3)=='n')){ 
               i=i+3; 
-              Serial.print("SH");
+              //Serial.print("SH");
               playWav1.play("SH.wav");
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("UN");
+              //Serial.print("UN");
               playWav1.play("UN.wav");
           } else if (txtMsg.charAt(i+1)=='t')  {
               //skip sound
           } else if ((txtMsg.charAt(i+1)=='i') && ((txtMsg.charAt(i+2)=='o'))) { 
-              Serial.print("SH");
+              //Serial.print("SH");
               playWav1.play("SH.wav");
           } else if ((txtMsg.charAt(i+1)=='u') && (txtMsg.charAt(i+2)=='a')) { 
               i++;
-              Serial.print("CH");
+              //Serial.print("CH");
               playWav1.play("CH.wav"); 
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("EW");
+              //Serial.print("EW");
               playWav1.play("EW.wav");  
 
               } else if ((txtMsg.charAt(i+1)=='i') && (txtMsg.charAt(i+2)=='a')) { 
               i++;
-              Serial.print("SH");
+              //Serial.print("SH");
               playWav1.play("SH.wav"); 
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("IY");
+              //Serial.print("IY");
               playWav1.play("IY.wav");    
           } else if (txtMsg.charAt(i+1)=='h') { 
               i++; 
-              Serial.print("TH");
+              //Serial.print("TH");
               playWav1.play("TH.wav"); 
           } else {
-              Serial.print("T");
+              //Serial.print("T");
               playWav1.play("T.wav");
           }
           while (playWav1.isPlaying()){
@@ -1087,77 +1087,77 @@ void loop() {
         case 'u':
           if ((txtMsg.charAt(i-1)=='q') && (txtMsg.charAt(i+1)=='a'))  { 
               i++; 
-              Serial.print("W");
+              //Serial.print("W");
               playWav1.play("W.wav");
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("AA");
+              //Serial.print("AA");
               playWav1.play("AA.wav");
           } else if ((txtMsg.charAt(i-1)=='q') && (txtMsg.charAt(i+1)=='e'))  { 
               i++; 
-              Serial.print("W");
+              //Serial.print("W");
               playWav1.play("W.wav");
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("EH");
+              //Serial.print("EH");
               playWav1.play("EH.wav");
           } else if ((txtMsg.charAt(i-1)=='q') && (txtMsg.charAt(i+1)=='i'))  { 
               i++; 
-              Serial.print("W");
+              //Serial.print("W");
               playWav1.play("W.wav");
               while (playWav1.isPlaying()){
                 delay(1);  
               }             
-              Serial.print("IH");
+              //Serial.print("IH");
               playWav1.play("IH.wav");  
           } else if ((txtMsg.charAt(i-1)=='q') && (txtMsg.charAt(i+1)=='o'))  { 
               i++; 
-              Serial.print("W");
+              //Serial.print("W");
               playWav1.play("W.wav");
               while (playWav1.isPlaying()){
                 delay(1);  
               }            
-              Serial.print("OW");
+              //Serial.print("OW");
               playWav1.play("OW.wav"); 
           } else if (((txtMsg.charAt(i-1)=='b') && (txtMsg.charAt(i+1)=='s')) && ((txtMsg.charAt(i+2)=='y') || (txtMsg.charAt(i+2)=='i'))) { //buisiness busy
               i=i+2;
-              Serial.print("IH");
+              //Serial.print("IH");
               playWav1.play("IH.wav"); 
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("Z");
+              //Serial.print("Z");
               playWav1.play("Z.wav");  
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("Y");
+              //Serial.print("Y");
               playWav1.play("Y.wav");  
           } else if ((txtMsg.charAt(i+1)=='s') && (vowels.indexOf(txtMsg.charAt(i+2)) != -1)) { //use
-              Serial.print("Y");
+              //Serial.print("Y");
               playWav1.play("Y.wav");                 
               
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("UW");
+              //Serial.print("UW");
               playWav1.play("UW.wav");   
           } else if (((txtMsg.charAt(i-1)=='t') || (txtMsg.charAt(i-1)=='b')) && (txtMsg.charAt(i+1)=='r')) { //'bur'n or 'tur'n
-              Serial.print("ER");
+              //Serial.print("ER");
               playWav1.play("ER.wav");              
           } else if ((txtMsg.charAt(i+1)=='e') || (txtMsg.charAt(i+1)=='i')){ 
               i++;
-              Serial.print("Y");
+              //Serial.print("Y");
               playWav1.play("Y.wav");  
               while (playWav1.isPlaying()){
                 delay(1);  
               } 
-              Serial.print("UW");
+              //Serial.print("UW");
               playWav1.play("UW.wav");  
           } else {
-              Serial.print("UH");
+              //Serial.print("UH");
               playWav1.play("UH.wav");   
           }            
           while (playWav1.isPlaying()){
@@ -1166,7 +1166,7 @@ void loop() {
         break;  
 
         case 'v':
-          Serial.print("V");
+          //Serial.print("V");
           playWav1.play("V.wav");
           while (playWav1.isPlaying()){
             delay(1);  
@@ -1176,10 +1176,10 @@ void loop() {
         case 'w':
           if (txtMsg.charAt(i+1)=='h') {
             i++;
-            Serial.print("WH");
+            //Serial.print("WH");
             playWav1.play("WH.wav");
           } else {
-              Serial.print("W");
+              //Serial.print("W");
               playWav1.play("W.wav");
           }
           while (playWav1.isPlaying()){
@@ -1189,15 +1189,15 @@ void loop() {
 
         case 'x':
           if (i==0) {
-            Serial.print("Z");
+            //Serial.print("Z");
             playWav1.play("Z.wav");
           } else {
-              Serial.print("K");
+              //Serial.print("K");
               playWav1.play("K.wav");
               while (playWav1.isPlaying()){
                 delay(1);  
               }
-              Serial.print("S");
+              //Serial.print("S");
               playWav1.play("S.wav");
           }  
           while (playWav1.isPlaying()){
@@ -1207,22 +1207,22 @@ void loop() {
 
         case 'y':
           if (txtMsg.charAt(i-1)=='n') {
-            Serial.print("IY");
+            //Serial.print("IY");
             playWav1.play("IY.wav"); 
           } else if ((txtMsg.charAt(i-1)=='m') || (txtMsg.charAt(i-1)=='b'))  { //by or my or bye
-              Serial.print("AY");
+              //Serial.print("AY");
               playWav1.play("AY.wav");  
           } else if ((txtMsg.length() < 6) && (txtMsg.length() -3 == i)) {  // if word is 3 char or less long, and ends in y then
-              Serial.print("AY");
+              //Serial.print("AY");
               playWav1.play("AY.wav");  
           } else if ((vowels.indexOf(txtMsg.charAt(i-2)) == -1) && (vowels.indexOf(txtMsg.charAt(i-1)) == -1))  { // if there are two consonant prior to, then sound like IY
-              Serial.print("IY");
+              //Serial.print("IY");
               playWav1.play("IY.wav"); 
           } else if ((vowels.indexOf(txtMsg.charAt(i-2)) != -1) && (vowels.indexOf(txtMsg.charAt(i-1)) == -1))  { // if there is a vowel, then a consonant {
-              Serial.print("IY"); 
+              //Serial.print("IY"); 
               playWav1.play("IY.wav"); 
           } else {
-              Serial.print("Y");
+              //Serial.print("Y");
               playWav1.play("Y.wav");
           }
           while (playWav1.isPlaying()){
@@ -1234,7 +1234,7 @@ void loop() {
           if (txtMsg.charAt(i+1)=='z') { 
             //skip first sound
           } else {
-          Serial.print("Z");
+          //Serial.print("Z");
           playWav1.play("Z.wav");
           }
           while (playWav1.isPlaying()){
@@ -1251,18 +1251,18 @@ void loop() {
         break;
 
         case '\r':  // cariage return
-          Serial.print(" ");
+          //Serial.print(" ");
           delay(200);
         break;    
 
         case ' ':  //space between words
-          Serial.print(" ");
+          //Serial.print(" ");
           delay(50);  //delay between words in a sentence
         break;   
 
         default:
-          Serial.print("Character: ");
-          Serial.print(letter);
+          //Serial.print("Character: ");
+          //Serial.print(letter);
           Serial.println(" could not be found!");  
           letter = char(128);          
           delay(100);      
