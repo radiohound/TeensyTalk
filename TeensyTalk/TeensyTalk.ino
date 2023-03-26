@@ -776,7 +776,7 @@ void say(String txtMsg) {
             //Serial.print("G"); 
             playWav1.play("G.wav");
           } else if ((txtMsg.charAt(i+1)=='h') && (txtMsg.charAt(i+1)=='t'))  { 
-              i+2; //skip sound for gh
+              i=i+2; //skip sound for gh
           } else if ((i==0) && (txtMsg.charAt(i+1)=='n')) {  // gnome dont make a sound
           } else if ((txtMsg.charAt(i+1)=='e') && (txtMsg.charAt(i+2)=='t')) {
               //Serial.print("G"); 
