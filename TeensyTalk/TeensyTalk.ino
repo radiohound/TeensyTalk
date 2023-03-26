@@ -1,5 +1,5 @@
 /*
-  TeensyTalk.ino Rev4
+  TeensyTalk.ino Rev5
 
   Example of using phonemes for Text To Speech sythesis
 
@@ -144,7 +144,7 @@ void setup() {
   //  ;  // wait for serial port to connect. Needed for native USB port only
   //}
 
-  AudioMemory(5); //was 50
+  AudioMemory(10); //was 50
   sgtl5000_1.enable();
   sgtl5000_1.volume(0.6);
 
@@ -189,6 +189,8 @@ void setup() {
     }
   }
 #endif
+  // default normal sounding tone for speech. Raise to raise frequency
+  setI2SFreq(22050); 
 }
 
 #ifdef T4
@@ -257,10 +259,13 @@ void setI2SFreq(int freq) {
 void loop() {
   delay(1000);  
   long altitude = random(1, 9999);
-  say("Im sorry dayv,, I cant doo that,,,,,,,,");
-  say("I can say a lot of words correctly, with decent robot diction,");
-  say("but I doo say some words incorrectly,,,,");
-  say("if you wish, you can correct my speech by eether modifying thu coding, or by changing your spelling of thu words,,,,,,,");
+  setI2SFreq(25050);
+  say("resistance is fuetiel.");
+  setI2SFreq(22050);
+  delay(200);
+  say("thee,");
+  say("height,");
+  say("is,,,,");
   sayNumber(altitude);
   delay(75);
   say("feet,,,,,,");
@@ -271,30 +276,25 @@ void loop() {
   say("north");
   say("west,,,,,");
   say("south east,,,,,");
-  say("turn, up, down, left, right,,,");
-
-
-
-
-
-
+  say("up, down, turn left, turn right,,,on,,,,off,,");
+  delay(2000);
+  setI2SFreq(28050);  // Raised to raise frequency of voice
+  say("your off to great places, today is your day, your mountain is waiting .. so ,, get on your way");
   delay(10000);
   
 }
 
 void say(String txtMsg) {
-
   String vowels = "aeiouy";
   String sisz = "bdglmnhv"; //for rule if words end in this letter, followed by an s, then it sounds like a z
   String ciss = "iey";      //when c is followed by i, e or y it will sound like s 
-  setI2SFreq(22050);
+  //setI2SFreq(22050);
+  //Serial.println(txtMsg);
   txtMsg += "\r\n"; //this is used in code below, so need to use it here untill I edit the rest of the code
   //todo : change to char string, not String for txtMsg
     for (unsigned int i=0; i<(txtMsg.length()-2); i++) {  //read each character without cariage return
       int letter = txtMsg.charAt(i);
-
       switch (letter) {
-
          case '0':
             //Serial.print("Z");
             playWav1.play("Z.wav");
@@ -624,7 +624,10 @@ void say(String txtMsg) {
               playWav1.play("EH.wav");  
           } else if (((txtMsg.charAt(i-2)=='n') && ((txtMsg.charAt(i-1)=='d') || (txtMsg.charAt(i-1)=='t')))) {    
               //Serial.print("EH(e8b)");
-              playWav1.play("EH.wav");      
+              playWav1.play("EH.wav");  
+          } else if ((txtMsg.charAt(i-2) == 'd') && (txtMsg.charAt(i-1) == 'r'))  { //exception for hun'dred'
+              Serial.print("EH(e8d)");
+              playWav1.play("EH.wav");            
           } else if ((vowels.indexOf(txtMsg.charAt(i-2)) == -1) && (vowels.indexOf(txtMsg.charAt(i-1)) == -1) &&  (txtMsg.charAt(i+1)=='d') && (txtMsg.length() - 4)==i)  {
               //silent E when used with words like missed, rushed, tipped linked stuffed - makes T sound
               i++;
@@ -640,6 +643,10 @@ void say(String txtMsg) {
           } else if ((txtMsg.length() - 3 == i) && (txtMsg.length() < 6) && ((txtMsg.charAt(i-1)=='h') || (txtMsg.charAt(i-1)=='b') || (txtMsg.charAt(i-1)=='m'))) {  //he or be she
               //Serial.print("IY(e10)");
               playWav1.play("IY.wav");
+          } else if ((txtMsg.charAt(i-1)=='h') && (txtMsg.charAt(i+1)=='i') && (txtMsg.charAt(i+2)=='g') && (txtMsg.charAt(i+3)=='h')) { 
+              i=i+3; 
+              //Serial.print("AY(e15)");
+              playWav1.play("AY.wav");    
           } else if ((txtMsg.charAt(i-1)=='c') && (txtMsg.charAt(i+1)=='i')) { //receipt
               i++;
               //Serial.print("IY(e11)");
@@ -768,9 +775,14 @@ void say(String txtMsg) {
             i++; //skip letter
             //Serial.print("G"); 
             playWav1.play("G.wav");
+          } else if ((txtMsg.charAt(i+1)=='h') && (txtMsg.charAt(i+1)=='t'))  { 
+              i+2; //skip sound for gh
           } else if ((i==0) && (txtMsg.charAt(i+1)=='n')) {  // gnome dont make a sound
-          } else if ((txtMsg.charAt(i+1)=='e') || (txtMsg.charAt(i+1)=='i'))  { 
-            //Serial.print("J");
+          } else if ((txtMsg.charAt(i+1)=='e') && (txtMsg.charAt(i+2)=='t')) {
+              //Serial.print("G"); 
+              playWav1.play("G.wav");
+          } else if ((txtMsg.charAt(i+1)=='e') && (txtMsg.charAt(i+2)=='l')){ 
+            Serial.print("J");
             playWav1.play("J.wav");
           } else if (txtMsg.charAt(i+1)=='y') { 
               i++; //
@@ -1151,7 +1163,7 @@ void say(String txtMsg) {
           } else if (txtMsg.charAt(i+1)=='h') { 
               i++; 
               //Serial.print("TH");
-              playWav1.play("TH.wav");
+              playWav1.play("TH.wav"); 
           } else {
               //Serial.print("T");
               playWav1.play("T.wav");
@@ -1320,8 +1332,12 @@ void say(String txtMsg) {
         break; 
 
         case '.': //period =  short delay between sounds
-          delay(30);
-        break;            
+          delay(200);
+        break;   
+
+        case ',': //short added delay
+          delay(75);
+        break;
 
         case '\r':  // cariage return
           //Serial.print(" ");
@@ -1330,7 +1346,7 @@ void say(String txtMsg) {
 
         case ' ':  //space between words
           //Serial.print(" ");
-          delay(35);  //delay between words in a sentence
+          delay(50);  //delay between words in a sentence
         break;   
 
         default:
@@ -1341,6 +1357,7 @@ void say(String txtMsg) {
           delay(100);      
         break;               
       }
+      delay(5); //delay between each letter of the word
     }
 
 
