@@ -626,7 +626,7 @@ void say(String txtMsg) {
               //Serial.print("EH(e8b)");
               playWav1.play("EH.wav");  
           } else if ((txtMsg.charAt(i-2) == 'd') && (txtMsg.charAt(i-1) == 'r'))  { //exception for hun'dred'
-              Serial.print("EH(e8d)");
+              //Serial.print("EH(e8d)");
               playWav1.play("EH.wav");            
           } else if ((vowels.indexOf(txtMsg.charAt(i-2)) == -1) && (vowels.indexOf(txtMsg.charAt(i-1)) == -1) &&  (txtMsg.charAt(i+1)=='d') && (txtMsg.length() - 4)==i)  {
               //silent E when used with words like missed, rushed, tipped linked stuffed - makes T sound
