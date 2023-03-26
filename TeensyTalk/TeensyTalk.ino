@@ -6,7 +6,7 @@
   Open the Serial Monitor and type in words to hear see the results.
 
   created March 15 2023
-  Rev4 March 25 2023
+  Rev5 March 26 2023
   by Walter Dunckel
 
   This uses Frank Boesing's WavePlayer library in order to play 22050 Hertz wav files
