@@ -8,4 +8,4 @@ say("do") , but several words can also be put inside the say() function. However
 
 The 51 sound files are very small and only take up a total of about 350Kb. The sketch uses about 27% of flash memory on the (smallest) Teensy 3.2, and about 13% of its RAM.  
 
-Type_in_words lets you test the output of different words you type in directly. It is helpful for debuging pronounciation problems, with help from the serial output of the phonemes used.
+The Type_in_words example lets you test the output of different words you type in directly. It is helpful for debuging pronounciation problems, with help from the serial output of the phonemes used.
