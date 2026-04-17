@@ -51,10 +51,10 @@ static bool matchRight(const char* word, int pos, const char* rctx) {
   for (int i=0; i<rlen; i++) {
     char need = rctx[i];
     char have = word[pos+i];
+    if (need=='#') return (have==0);  // # = end of word - must check before have==0
     if (have==0) return false;
     if (need=='V' && isVowel(have)) continue;
     if (need=='C' && isConsonant(have)) continue;
-    if (need=='#') return (have==0);  // # = end of word
     if (need != have) return false;
   }
   return true;
@@ -117,9 +117,9 @@ static const L2SRule rules_e[] = {
 { "",  "ew",  "",    "j u"      },  // new, dew
 { "",  "ey",  "",    "i"        },  // key, honey
 { "",  "eigh","",    "EI"       },  // eight, weight
+{ "",  "er",  "",    "r="       },  // her, fern, butter - before e+C# to avoid double-r
 { "",  "e",   "C#",  "i"        },  // pete (silent E makes long E)
 { "",  "e",   "#",   ""         },  // silent E at end
-{ "",  "e",   "r",   "r="       },  // her, fern
 { "",  "e",   "",    "E"        },  // default short E
 };
 
@@ -163,6 +163,7 @@ static const L2SRule rules_k[] = {
 };
 
 static const L2SRule rules_l[] = {
+{ "",  "le",  "#",   "l="       },  // bottle, little, table (syllabic L)
 { "",  "ll",  "",    "l"        },  // bell, full
 { "",  "l",   "",    "l"        },  // default
 };
@@ -173,9 +174,11 @@ static const L2SRule rules_m[] = {
 };
 
 static const L2SRule rules_n[] = {
+{ "",  "nge", "#",   "n dZ"     },  // range, hinge, strange (word-final -nge)
 { "",  "ng",  "#",   "N"        },  // sing, ring (word final)
-{ "",  "ng",  "C",   "N"        },  // finger, longer
-{ "",  "ng",  "",    "n dZ"     },  // range, change
+{ "",  "ng",  "C",   "N"        },  // longest, strongest
+{ "",  "ng",  "V",   "N g"      },  // finger, anger (hard g before vowel suffix)
+{ "",  "ng",  "",    "n dZ"     },  // default ng
 { "",  "nn",  "",    "n"        },  // inn, connect
 { "",  "n",   "",    "n"        },  // default
 };
@@ -234,7 +237,7 @@ static const L2SRule rules_u[] = {
 { "",  "ur",  "",    "r="       },  // burn, turn, fur
 { "",  "ue",  "",    "j u"      },  // cue, blue
 { "",  "ui",  "",    "u"        },  // fruit, suit
-{ "",  "u",   "C#",  "j u"      },  // cute, mule (silent E)
+{ "",  "u",   "CV",  "j u"      },  // cute, mule (consonant then vowel = long U)
 { "",  "u",   "",    "V"        },  // default short U
 };
 
