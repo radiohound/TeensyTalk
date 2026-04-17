@@ -189,7 +189,7 @@ static const L2SRule rules_o[] = {
 { "",  "ou",  "",    "aU"       },  // out, found
 { "",  "oi",  "",    "OI"       },  // oil, coin
 { "",  "oy",  "",    "OI"       },  // boy, toy
-{ "",  "or",  "",    "Or"       },  // for, more, door
+{ "",  "or",  "",    "O r"      },  // for, more, door
 { "",  "o",   "CV",  "@U"       },  // hope, note (silent E)
 { "",  "o",   "C#",  "@U"       },  // go, no (word final)
 { "",  "o",   "",    "A"        },  // default short O

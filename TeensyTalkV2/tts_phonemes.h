@@ -28,8 +28,15 @@ static const PhonemeMap PHONEME_MAP[] = {
 { "t_h", "TH2"  },  // aspirated T - avoid clash with TH (voiceless th)
 { "k_h", "KH"   },  // aspirated K
 { "4",   "FL"   },  // flapped T (butter, later)
-{ "Or",  "OR"   },  // O before r (sort, north)
 { "l=",  "LS"   },  // syllabic L  (bottle)
+{ "T",   "TH"   },  // voiceless th (think, path) - T clashes with t.wav on FAT32
+{ "D",   "DH"   },  // voiced th (the, this) - D clashes with d.wav on FAT32
+{ "S",   "SH"   },  // sh sound (she, fish) - S clashes with s.wav on FAT32
+{ "Z",   "ZH"   },  // zh sound (vision) - Z clashes with z.wav on FAT32
+{ "V",   "UH"   },  // strut vowel (but, cut) - V clashes with v.wav on FAT32
+{ "N",   "NG"   },  // ng sound (sing, ring) - N clashes with n.wav on FAT32
+{ "I",   "IH"   },  // short I (bit, big) - I clashes with i.wav on FAT32
+{ "U",   "UU"   },  // short oo (book, could) - U clashes with u.wav on FAT32
 { NULL,  NULL   }   // sentinel
 };
 
