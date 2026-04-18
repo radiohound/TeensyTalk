@@ -89,12 +89,6 @@ static bool isAllDigits(const char* w) {
     return true;
 }
 
-static void speakWordOrNumber(const char* word, AudioPlayBuffer& player) {
-    if (!word || !word[0]) return;
-    if (isAllDigits(word)) sayNumber(atol(word), player);
-    else speakWord(word, player);
-}
-
 // Main say() function.
 // Accepts a string of words, splits on spaces/punctuation,
 // normalises each word and speaks it.
@@ -204,6 +198,12 @@ static void sayNumber(long n, AudioPlayBuffer& player) {
                            "nineteen" };
     speakWord(ones[n], player);
   }
+}
+
+static void speakWordOrNumber(const char* word, AudioPlayBuffer& player) {
+    if (!word || !word[0]) return;
+    if (isAllDigits(word)) sayNumber(atol(word), player);
+    else speakWord(word, player);
 }
 
 #endif // TTS_SAY_H
