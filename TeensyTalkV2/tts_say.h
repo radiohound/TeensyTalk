@@ -37,53 +37,57 @@ static void normalizeWord(char* word) {
 }
 
 // Speak a single already-normalised lowercase word.
-// Tries dictionary first, falls back to rules.
-static void speakWord(const char* word, AudioPlayWav& player) {
+// Loads all phoneme PCM into RAM first, then plays as one gapless stream.
+static void speakWord(const char* word, AudioPlayBuffer& player) {
     if (!word || word[0] == 0) return;
 
-  // 1. Dictionary lookup
-  const char* dictPhones = dictLookup(word);
+    // 1. Dictionary lookup: flash dict first (hand-curated corrections),
+    //    then SD dict (CMU data for broad coverage).
+    const char* dictPhones = dictLookup(word);
+    if (!dictPhones) dictPhones = sdDictLookup(word);
 
-  char phonBuf[MAX_PHONEMES][MAX_PHONEME_LEN];
-  int nPhon = 0;
+    char phonBuf[MAX_PHONEMES][MAX_PHONEME_LEN];
+    int nPhon = 0;
 
-  if (dictPhones) {
-    // Parse space-separated phoneme string from dictionary
-    char tmp[128];
-    strncpy(tmp, dictPhones, sizeof(tmp)-1);
-    tmp[sizeof(tmp)-1] = 0;
-    char* tok = strtok(tmp, " ");
-    while (tok && nPhon < MAX_PHONEMES) {
-      strncpy(phonBuf[nPhon], tok, MAX_PHONEME_LEN-1);
-      phonBuf[nPhon][MAX_PHONEME_LEN-1] = 0;
-      nPhon++;
-      tok = strtok(NULL, " ");
+    if (dictPhones) {
+        char tmp[128];
+        strncpy(tmp, dictPhones, sizeof(tmp)-1);
+        tmp[sizeof(tmp)-1] = 0;
+        char* tok = strtok(tmp, " ");
+        while (tok && nPhon < MAX_PHONEMES) {
+            strncpy(phonBuf[nPhon], tok, MAX_PHONEME_LEN-1);
+            phonBuf[nPhon][MAX_PHONEME_LEN-1] = 0;
+            nPhon++;
+            tok = strtok(NULL, " ");
+        }
+    } else {
+        nPhon = applyRules(word, phonBuf, MAX_PHONEMES);
     }
-  } else {
-    // 2. Letter-to-sound rules
-    nPhon = applyRules(word, phonBuf, MAX_PHONEMES);
-  }
 
-  // 3. Play each phoneme
-  for (int i = 0; i < nPhon; i++) {
-    playPhoneme(phonBuf[i], player);
-  }
+    // 2. Load all phonemes into RAM buffer
+    pcmReset();
+    for (int i = 0; i < nPhon; i++)
+        loadPhoneme(phonBuf[i], i == nPhon - 1);
 
-  // Debug: print phoneme sequence to Serial
-  Serial.print(word);
-  Serial.print(": ");
-  for (int i = 0; i < nPhon; i++) {
-    Serial.print(phonBuf[i]);
-    Serial.print(" ");
-  }
-  Serial.println(dictPhones ? "(dict)" : "(rules)");
+    // 3. Play the whole word as one continuous stream
+    player.start(g_pcmBuf, g_pcmLen);
+    while (player.isPlaying()) { delayMicroseconds(200); }
+
+    // Debug output
+    Serial.print(word);
+    Serial.print(": ");
+    for (int i = 0; i < nPhon; i++) {
+        Serial.print(phonBuf[i]);
+        Serial.print(" ");
+    }
+    Serial.println(dictPhones ? "(dict)" : "(rules)");
 }
 
 // Main say() function.
 // Accepts a string of words, splits on spaces/punctuation,
 // normalises each word and speaks it.
 // Commas add a short pause, periods add a longer pause.
-static void say(const char* text, AudioPlayWav& player) {
+static void say(const char* text, AudioPlayBuffer& player) {
     if (!text) return;
 
   char buf[256];
@@ -138,7 +142,7 @@ static void say(const char* text, AudioPlayWav& player) {
 // sayNumber() - speaks any integer from -999,999 to 999,999
 // Fixed typo from original ("thousand" not "thousdand")
 // Uses say() internally so benefits from dict+rules automatically
-static void sayNumber(long n, AudioPlayWav& player) {
+static void sayNumber(long n, AudioPlayBuffer& player) {
     if (n < 0) {
     speakWord("negative", player);
     delay(50);
