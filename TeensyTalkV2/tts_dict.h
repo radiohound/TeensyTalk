@@ -272,6 +272,7 @@ static const DictEntry EXCEPTION_DICT[] = {
 { "less",        "l E s"                },
 { "let",         "l E t"                },
 { "level",       "l E v @l"             },
+{ "liberty",     "l I b @ r t i"       },
 { "life",        "l AI f"               },
 { "light",       "l AI t"               },
 { "like",        "l AI k"               },
