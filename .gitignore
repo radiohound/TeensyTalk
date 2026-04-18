@@ -1,0 +1,9 @@
+# Generated SD card dictionary — build with: python3 build_dict.py
+DICT.BIN
+
+# Compiled test binaries
+test_quick
+test_regression
+
+# macOS
+.DS_Store
