@@ -76,8 +76,7 @@ static const L2SRule rules_a[] = {
 { "",  "al",  "l",   "O"        },  // all, ball
 { "",  "al",  "m",   "A"        },  // calm, palm
 { "",  "a",   "tion","EI"       },  // nation
-{ "",  "a",   "CV",  "EI"       },  // consonant then vowel = long A
-{ "",  "a",   "C#",  "EI"       },  // silent E pattern
+{ "",  "a",   "CV",  "EI"       },  // consonant then vowel = long A (cake, make)
 { "",  "a",   "",    "{"        },  // default short A
 };
 
@@ -94,7 +93,7 @@ static const L2SRule rules_c[] = {
 { "",  "cc",  "i",   "k s"      },  // accident
 { "",  "cc",  "",    "k"        },  // account
 { "",  "cia", "",    "S"        },  // social
-{ "",  "cion","",    "S @n"     },  // suspicion
+{ "",  "cion","",    "S @ n"     },  // suspicion
 { "",  "c",   "e",   "s"        },  // cent, face
 { "",  "c",   "i",   "s"        },  // city, acid
 { "",  "c",   "y",   "s"        },  // cycle
@@ -118,7 +117,7 @@ static const L2SRule rules_e[] = {
 { "",  "ey",  "",    "i"        },  // key, honey
 { "",  "eigh","",    "EI"       },  // eight, weight
 { "",  "er",  "",    "r="       },  // her, fern, butter - before e+C# to avoid double-r
-{ "",  "e",   "C#",  "i"        },  // pete (silent E makes long E)
+{ "",  "e",   "Ce#", "i"        },  // pete, these (consonant + silent e = long E)
 { "",  "e",   "#",   ""         },  // silent E at end
 { "",  "e",   "",    "E"        },  // default short E
 };
@@ -145,9 +144,9 @@ static const L2SRule rules_h[] = {
 static const L2SRule rules_i[] = {
 { "",  "igh", "",    "AI"       },  // light, night, high
 { "",  "ie",  "",    "i"        },  // field, piece
-{ "",  "ion", "",    "j @n"     },  // million, union
+{ "",  "ion", "",    "j @ n"     },  // million, union
 { "",  "ir",  "",    "r="       },  // bird, girl
-{ "",  "i",   "C#",  "AI"       },  // bike, kite (silent E)
+{ "",  "i",   "Ce#", "AI"       },  // bike, kite (consonant + silent e at end)
 { "",  "i",   "nd",  "AI"       },  // find, mind, kind
 { "",  "i",   "ld",  "AI"       },  // mild, wild
 { "",  "i",   "",    "I"        },  // default short I
@@ -216,8 +215,8 @@ static const L2SRule rules_r[] = {
 
 static const L2SRule rules_s[] = {
 { "",  "sh",  "",    "S"        },  // ship, fish
-{ "",  "sion","",    "Z @n"     },  // vision, occasion
-{ "",  "tion","",    "S @n"     },  // nation, station
+{ "",  "sion","",    "Z @ n"     },  // vision, occasion
+{ "",  "tion","",    "S @ n"     },  // nation, station
 { "",  "ss",  "",    "s"        },  // miss, class
 { "V", "s",   "V",   "z"        },  // between vowels = Z
 { "",  "s",   "#",   "z"        },  // plurals/verbs at end after vowel
@@ -227,7 +226,7 @@ static const L2SRule rules_s[] = {
 static const L2SRule rules_t[] = {
 { "",  "th",  "",    "T"        },  // think, path (default voiceless)
 { "",  "tch", "",    "tS"       },  // catch, match
-{ "",  "tion","",    "S @n"     },  // nation, station
+{ "",  "tion","",    "S @ n"     },  // nation, station
 { "",  "tia", "",    "S @"      },  // partial
 { "",  "tt",  "",    "t"        },  // butter, little
 { "",  "t",   "",    "t"        },  // default
