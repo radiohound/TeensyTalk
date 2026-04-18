@@ -113,10 +113,11 @@ static bool pcmAppendWav(const char* path, bool isLast = false, bool isStop = fa
     f.read((uint8_t*)dst, samples * sizeof(int16_t));
     f.close();
 
-    // Trim true digital silence from both ends (threshold very low to preserve
-    // plosive bursts while removing the dead samples before the MBROLA fade-in).
+    // Trim true digital silence from both ends.
+    // For stops, skip leading trim entirely — the closure period (near-silence
+    // before the burst) is an important acoustic cue and must be preserved.
     uint32_t start = 0;
-    if (g_pcmLen > 0)  // skip leading trim on the first phoneme of a word
+    if (g_pcmLen > 0 && !isStop)  // skip leading trim on first phoneme or any stop
         while (start < samples && abs(dst[start]) < PCM_TRIM) start++;
 
     // Trim trailing digital silence
