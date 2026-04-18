@@ -236,7 +236,7 @@ static const DictEntry EXCEPTION_DICT[] = {
 { "house",       "h aU s"               },
 { "how",         "h aU"                 },
 { "however",     "h aU E v r="          },
-{ "hundred",     "h V n d r @d"         },
+{ "hundred",     "h V n d r @ d"        },
 { "i",           "AI"                   },
 { "idea",        "AI d i @"             },
 { "if",          "I f"                  },
