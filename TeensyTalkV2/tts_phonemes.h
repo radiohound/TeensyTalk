@@ -26,7 +26,8 @@ static const PhonemeMap PHONEME_MAP[] = {
 { "r=",  "ER"   },  // her         - = is not FAT32 safe
 { "p_h", "PH"   },  // aspirated P - _ ok but keep consistent
 { "t_h", "TH2"  },  // aspirated T - avoid clash with TH (voiceless th)
-{ "k_h", "KH"   },  // aspirated K
+{ "k",   "KH"   },  // plain k too weak; aspirated has audible burst
+{ "k_h", "KH"   },  // aspirated K (explicit)
 { "4",   "FL"   },  // flapped T (butter, later)
 { "l=",  "LS"   },  // syllabic L  (bottle)
 { "T",   "TH"   },  // voiceless th (think, path) - T clashes with t.wav on FAT32
@@ -52,15 +53,46 @@ static const char* phonemeToWav(const char* mbrola) {
   return mbrola; // use MBROLA name directly as filename
 }
 
-// Play a single phoneme WAV file.
-// Blocks until playback is complete.
-// Expects playWav1 and SD to already be initialised.
-static void playPhoneme(const char* mbrola, AudioPlayWav& player) {
+// Load one phoneme's PCM data into the shared g_pcmBuf.
+// Call pcmReset() before the first phoneme of a word, then
+// start(g_pcmBuf, g_pcmLen) on AudioPlayBuffer when all are loaded.
+// Minimum duration for a word-final phoneme in samples (55 ms at 16 kHz).
+#define FINAL_MIN_SAMPLES 880
+
+static void loadPhoneme(const char* mbrola, bool isLast = false) {
     const char* base = phonemeToWav(mbrola);
-  char path[32];
-  snprintf(path, sizeof(path), "%s.wav", base);
-  player.play(path);
-  while (player.isPlaying()) { delay(1); }
+    char path[32];
+    snprintf(path, sizeof(path), "%s.wav", base);
+    uint32_t before = g_pcmLen;
+    if (!pcmAppendWav(path, isLast)) {
+        Serial.print("MISSING: "); Serial.println(path);
+        return;
+    }
+
+    // Extend short final phonemes by repeating their aspiration tail,
+    // then apply a linear fade-out over the extension to eliminate loop clicks.
+    if (isLast) {
+        uint32_t added = g_pcmLen - before;
+        if (added > 0 && added < FINAL_MIN_SAMPLES) {
+            uint32_t tailLen = added / 3;
+            if (tailLen < 8) tailLen = 8;
+            uint32_t extStart = g_pcmLen;
+            while (g_pcmLen - before < FINAL_MIN_SAMPLES
+                   && g_pcmLen + tailLen <= PCM_MAX_SAMPLES) {
+                memcpy(g_pcmBuf + g_pcmLen,
+                       g_pcmBuf + g_pcmLen - tailLen,
+                       tailLen * sizeof(int16_t));
+                g_pcmLen += tailLen;
+            }
+            // Fade the extension to zero so loop boundaries are inaudible
+            uint32_t extLen = g_pcmLen - extStart;
+            for (uint32_t i = 0; i < extLen; i++) {
+                int32_t scale = (int32_t)((extLen - i) * 256) / extLen;
+                g_pcmBuf[extStart + i] =
+                    (int16_t)(((int32_t)g_pcmBuf[extStart + i] * scale) >> 8);
+            }
+        }
+    }
 }
 
 #endif // TTS_PHONEMES_H
