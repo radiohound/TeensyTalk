@@ -144,7 +144,7 @@ static void say(const char* text, AudioPlayBuffer& player) {
   if (wi > 0) {
     word[wi] = 0;
     normalizeWord(word);
-    if (word[0]) speakWord(word, player);
+    if (word[0]) speakWordOrNumber(word, player);
   }
 }
 
