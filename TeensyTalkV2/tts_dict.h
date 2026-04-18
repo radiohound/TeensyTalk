@@ -192,7 +192,6 @@ static const DictEntry EXCEPTION_DICT[] = {
 { "full",        "f U l"                },
 { "further",     "f r= D r="            },
 { "future",      "f j u tS r="          },
-{ "garage",      "g @ r A Z"            },
 { "get",         "g E t"                },
 { "give",        "g I v"                },
 { "given",       "g I v @ n"             },
