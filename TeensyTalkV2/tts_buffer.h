@@ -95,7 +95,7 @@ static uint32_t wavDataOffset(File& f) {
 // 1. Trims leading near-silence (MBROLA fade-in envelope).
 // 2. Crossfades the join with the previous phoneme to eliminate
 //    the amplitude step that causes audible clipping between phonemes.
-static bool pcmAppendWav(const char* path, bool isLast = false) {
+static bool pcmAppendWav(const char* path, bool isLast = false, bool isStop = false) {
     File f = SD.open(path);
     if (!f) return false;
 
@@ -144,10 +144,10 @@ static bool pcmAppendWav(const char* path, bool isLast = false) {
         }
     }
 
-    // Crossfade interior phonemes. Skip for the last phoneme: word-final
-    // plosives (k, p, t) have their burst early and crossfading attenuates it.
+    // Crossfade interior phonemes. Skip for the last phoneme or a stop consonant:
+    // plosive bursts live at the onset and crossfading fades them out.
     // The closure silence at the start of a plosive prevents any hard click.
-    if (!isLast && g_pcmLen >= XFADE_SAMPLES && trimmed >= XFADE_SAMPLES) {
+    if (!isLast && !isStop && g_pcmLen >= XFADE_SAMPLES && trimmed >= XFADE_SAMPLES) {
         int16_t* prev = g_pcmBuf + g_pcmLen - XFADE_SAMPLES;
         for (uint32_t i = 0; i < XFADE_SAMPLES; i++) {
             int32_t a = (int32_t)(i * 256) / XFADE_SAMPLES; // 0..255

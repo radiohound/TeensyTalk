@@ -59,12 +59,20 @@ static const char* phonemeToWav(const char* mbrola) {
 // Minimum duration for a word-final phoneme in samples (55 ms at 16 kHz).
 #define FINAL_MIN_SAMPLES 880
 
+static bool isStopPhoneme(const char* mbrola) {
+    const char* stops[] = { "b","d","g","p","t","k","k_h","p_h","t_h","tS","dZ","4", NULL };
+    for (int i = 0; stops[i]; i++)
+        if (strcmp(mbrola, stops[i]) == 0) return true;
+    return false;
+}
+
 static void loadPhoneme(const char* mbrola, bool isLast = false) {
     const char* base = phonemeToWav(mbrola);
     char path[32];
     snprintf(path, sizeof(path), "%s.wav", base);
+    bool isStop = isStopPhoneme(mbrola);
     uint32_t before = g_pcmLen;
-    if (!pcmAppendWav(path, isLast)) {
+    if (!pcmAppendWav(path, isLast, isStop)) {
         Serial.print("MISSING: "); Serial.println(path);
         return;
     }
