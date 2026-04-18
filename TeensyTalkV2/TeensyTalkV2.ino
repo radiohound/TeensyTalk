@@ -5,8 +5,7 @@
 
    Hardware: Teensy 3.2/3.5/3.6/4.0/4.1 + Teensy Audio Shield
    Audio:    MBROLA us2 WAV files at 16000 Hz on SD card
-   Library:  Frank Boesing's Teensy-WavePlayer
-             https://github.com/FrankBoesing/Teensy-WavePlayer
+   Playback: RAM-buffered PCM via AudioPlayBuffer (no inter-phoneme gaps)
 
    Branch: espeak-ng-rewrite
 */
@@ -16,8 +15,6 @@
 #include <SPI.h>
 #include <SD.h>
 #include <SerialFlash.h>
-#include <play_wav.h>
-
 #if defined(__IMXRT1062__)
   #define T4
   #include <utility/imxrt_hw.h>
@@ -25,7 +22,9 @@
   #define F_I2S ((((I2S0_MCR >> 24) & 0x03) == 3) ? F_PLL : F_CPU)
 #endif
 
-AudioPlayWav         playWav1;
+#include "tts_buffer.h"
+
+AudioPlayBuffer      playWav1;
 AudioOutputI2S       outputsound;
 AudioConnection      patchCord1(playWav1, 0, outputsound, 0);
 AudioConnection      patchCord2(playWav1, 0, outputsound, 1);
@@ -37,6 +36,7 @@ AudioControlSGTL5000 sgtl5000_1;
 
 #include "tts_phonemes.h"
 #include "tts_dict.h"
+#include "tts_dict_sd.h"
 #include "tts_rules.h"
 #include "tts_say.h"
 
@@ -113,6 +113,7 @@ void setup() {
 #endif
 
   setI2SFreq(16000);
+  sdDictInit();
 
   Serial.println("TeensyTalk V2 ready. Type something and press Enter.");
 }
