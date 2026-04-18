@@ -95,13 +95,15 @@ All files from `TeensyTalkV2/wavs/` — listed below with their MBROLA phoneme m
 |---|---|
 | `DICT.BIN` | CMU Pronouncing Dictionary, ~125,000 words, binary format |
 
+**Download DICT.BIN** from the [latest release](https://github.com/radiohound/TeensyTalk/releases/latest) and copy it to the SD card root. It is not stored in the repo due to its size (~15 MB).
+
 **Important:** All files go directly in the SD card root — no subdirectories.
 
 ---
 
-## Building DICT.BIN
+## Building DICT.BIN (optional)
 
-`build_dict.py` (in the repo root) downloads the CMU Pronouncing Dictionary, converts ARPABET phonemes to MBROLA us2 names, and writes the sorted binary file.
+`DICT.BIN` is available as a pre-built download on the [releases page](https://github.com/radiohound/TeensyTalk/releases/latest). If you want to rebuild it yourself (e.g. after modifying the ARPABET conversion), use `build_dict.py` in the repo root:
 
 ```bash
 python3 build_dict.py          # writes DICT.BIN in current directory
