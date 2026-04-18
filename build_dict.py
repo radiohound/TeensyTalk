@@ -75,12 +75,34 @@ ARPABET = {
 }
 
 
+# ARPABET two-token sequences that map to a single MBROLA phoneme.
+# Checked before individual token lookup so they take priority.
+SEQUENCES = [
+    (("AO", "R"), "Or"),   # p[or]t, m[or]e, c[or]n -> Or (r-colored O)
+]
+
 def convert_phones(arpabet_tokens):
     """Convert a list of ARPABET tokens to a MBROLA phoneme string.
     Returns None if any token is unrecognised."""
+    # Strip stress digits for sequence matching
+    stripped = [t.rstrip("012") for t in arpabet_tokens]
     out = []
-    for tok in arpabet_tokens:
-        # Try with stress digit first (AH0 / AH1 / AH2), then stripped
+    i = 0
+    while i < len(arpabet_tokens):
+        # Check two-token sequences first
+        matched = False
+        if i + 1 < len(arpabet_tokens):
+            pair = (stripped[i], stripped[i + 1])
+            for seq, mbrola in SEQUENCES:
+                if pair == seq:
+                    out.append(mbrola)
+                    i += 2
+                    matched = True
+                    break
+        if matched:
+            continue
+        # Single token lookup
+        tok = arpabet_tokens[i]
         if tok in ARPABET:
             out.append(ARPABET[tok])
         else:
@@ -89,6 +111,7 @@ def convert_phones(arpabet_tokens):
                 out.append(ARPABET[base])
             else:
                 return None   # unknown phoneme — skip word
+        i += 1
     return " ".join(out)
 
 
