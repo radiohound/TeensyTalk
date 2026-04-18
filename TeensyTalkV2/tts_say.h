@@ -18,13 +18,13 @@ static void normalizeWord(char* word) {
   for (int i = 0; word[i]; i++) {
     if (word[i] >= 'A' && word[i] <= 'Z') word[i] += 32;
   }
-  // Strip leading punctuation
+  // Strip leading punctuation (keep letters and digits)
   int start = 0;
-  while (word[start] && !isalpha(word[start])) start++;
+  while (word[start] && !isalnum(word[start])) start++;
   if (start > 0) memmove(word, word+start, strlen(word)-start+1);
-  // Strip trailing punctuation
+  // Strip trailing punctuation (keep letters and digits)
   int len = strlen(word);
-  while (len > 0 && !isalpha(word[len-1])) { word[--len] = 0; }
+  while (len > 0 && !isalnum(word[len-1])) { word[--len] = 0; }
   // Handle common contractions - strip suffix
   // 's  -> strip (possessive / is)
   // 't  -> already in dict (don't, won't, can't)
@@ -83,6 +83,18 @@ static void speakWord(const char* word, AudioPlayBuffer& player) {
     Serial.println(dictPhones ? "(dict)" : "(rules)");
 }
 
+static bool isAllDigits(const char* w) {
+    if (!w || !w[0]) return false;
+    for (int i = 0; w[i]; i++) if (!isdigit((unsigned char)w[i])) return false;
+    return true;
+}
+
+static void speakWordOrNumber(const char* word, AudioPlayBuffer& player) {
+    if (!word || !word[0]) return;
+    if (isAllDigits(word)) sayNumber(atol(word), player);
+    else speakWord(word, player);
+}
+
 // Main say() function.
 // Accepts a string of words, splits on spaces/punctuation,
 // normalises each word and speaks it.
@@ -107,7 +119,7 @@ static void say(const char* text, AudioPlayBuffer& player) {
       if (wi > 0) {
         word[wi] = 0;
         normalizeWord(word);
-        if (word[0]) speakWord(word, player);
+        if (word[0]) speakWordOrNumber(word, player);
         wi = 0;
       }
       delay(80); // short pause for comma
@@ -115,7 +127,7 @@ static void say(const char* text, AudioPlayBuffer& player) {
       if (wi > 0) {
         word[wi] = 0;
         normalizeWord(word);
-        if (word[0]) speakWord(word, player);
+        if (word[0]) speakWordOrNumber(word, player);
         wi = 0;
       }
       delay(200); // sentence pause
@@ -123,7 +135,7 @@ static void say(const char* text, AudioPlayBuffer& player) {
       if (wi > 0) {
         word[wi] = 0;
         normalizeWord(word);
-        if (word[0]) speakWord(word, player);
+        if (word[0]) speakWordOrNumber(word, player);
         wi = 0;
       }
       delay(50); // inter-word gap
