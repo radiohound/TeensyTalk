@@ -1,0 +1,16 @@
+# Generated SD card dictionary — build with: python3 build_dict.py
+DICT.BIN
+
+# Compiled test binaries
+test_quick
+test_regression
+
+# Python
+__pycache__/
+
+# Temporary audio preview files
+*.wav
+!TeensyTalkV2/wavs/*.wav
+
+# macOS
+.DS_Store
