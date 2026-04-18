@@ -89,6 +89,9 @@ static bool isAllDigits(const char* w) {
     return true;
 }
 
+static void sayNumber(long n, AudioPlayBuffer& player);
+static void speakWordOrNumber(const char* word, AudioPlayBuffer& player);
+
 // Main say() function.
 // Accepts a string of words, splits on spaces/punctuation,
 // normalises each word and speaks it.
